@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#153d2e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Kasa">
+<link rel="manifest" href="manifest.json">
+<title>Kasa — Kişisel Finans</title>
+<style>
+:root{--green:#153d2e;--green2:#216448;--bg:#f3f5f2;--card:#fff;--text:#18231d;--muted:#68766d;--line:#e2e8e2;--red:#bd4c45;--gold:#d2a53b;--shadow:0 8px 24px #163e2b0b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding-bottom:calc(82px + env(safe-area-inset-bottom))}
+button,input,select{font:inherit}button{cursor:pointer}.app{max-width:720px;margin:auto}.top{background:var(--green);color:#fff;padding:calc(18px + env(safe-area-inset-top)) 18px 22px;border-radius:0 0 26px 26px}.topline{display:flex;align-items:center;justify-content:space-between}.brand{font-size:12px;letter-spacing:3px;font-weight:800;color:#c8dfd1}.title{font-size:25px;font-weight:750;margin:8px 0 4px}.sub{font-size:13px;color:#c8d8ce}.hero{margin-top:20px}.hero small{color:#c8d8ce}.hero .big{font-size:32px;font-weight:800;margin-top:5px;letter-spacing:-1px}.wrap{padding:16px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:15px;box-shadow:var(--shadow);min-width:0}.metriclabel{color:var(--muted);font-size:12px}.metric{font-size:19px;font-weight:750;margin-top:8px;overflow-wrap:anywhere}.green{color:var(--green2)}.red{color:var(--red)}.section{display:flex;justify-content:space-between;align-items:center;margin:20px 2px 10px}.section h2{font-size:17px;margin:0}.muted{color:var(--muted)}.small{font-size:12px}.btn{border:0;border-radius:12px;padding:11px 13px;background:var(--green);color:white;font-weight:650}.btn.secondary{background:#e8eee9;color:var(--green)}.btn.danger{background:#fff0ef;color:var(--red)}.btn.full{width:100%}.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.quick button{background:#fff;border:1px solid var(--line);border-radius:15px;padding:14px 5px;color:var(--green);font-size:12px;font-weight:700}.quick b{display:block;font-size:22px;margin-bottom:5px}.tabs{position:fixed;bottom:0;left:0;right:0;background:#ffffffed;backdrop-filter:blur(18px);border-top:1px solid var(--line);padding:8px 6px calc(8px + env(safe-area-inset-bottom));display:flex;justify-content:space-around;z-index:5}.tab{border:0;background:none;color:#77827a;font-size:10px;display:flex;flex-direction:column;align-items:center;gap:4px;min-width:56px}.tab span{font-size:21px}.tab.active{color:var(--green);font-weight:800}.page{display:none}.page.active{display:block}.item{display:flex;gap:11px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line)}.item:last-child{border-bottom:0}.icon{height:39px;width:39px;border-radius:13px;background:#edf3ee;display:grid;place-items:center;font-size:18px;flex-shrink:0}.itemmain{flex:1;min-width:0}.itemtitle{font-weight:700;font-size:14px;overflow-wrap:anywhere}.itemsublabel{font-size:11px;color:var(--muted);margin-top:4px}.itemamount{font-size:13px;font-weight:750;text-align:right;white-space:nowrap}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}.field label{font-size:12px;font-weight:700;color:var(--muted)}.field input,.field select{width:100%;border:1px solid #d9e2da;border-radius:11px;padding:12px;background:white;color:var(--text);min-width:0}.field.fullrow{grid-column:1/-1}.pillrow{display:flex;gap:7px;flex-wrap:wrap}.pill{border:1px solid var(--line);background:white;border-radius:999px;padding:8px 11px;font-size:12px}.pill.active{background:var(--green);color:white;border-color:var(--green)}.progress{height:8px;background:#e8eee9;border-radius:99px;overflow:hidden;margin-top:9px}.progress div{height:100%;background:#3d9368;border-radius:99px}.progress.over div{background:var(--red)}.empty{text-align:center;padding:26px 12px;color:var(--muted);font-size:13px}.notice{padding:12px;border-radius:12px;background:#fff6df;color:#73591b;font-size:12px;line-height:1.45}.oknotice{padding:12px;border-radius:12px;background:#eaf5ed;color:#23583c;font-size:12px;line-height:1.45}.modal{position:fixed;inset:0;background:#0006;display:none;align-items:flex-end;z-index:10}.modal.open{display:flex}.sheet{background:var(--bg);width:100%;max-width:720px;margin:auto auto 0;border-radius:24px 24px 0 0;max-height:91dvh;overflow:auto;padding:18px 17px calc(20px + env(safe-area-inset-bottom))}.sheethead{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.sheethead h2{font-size:19px;margin:0}.close{border:0;background:#e5ebe6;border-radius:50%;height:34px;width:34px;font-size:18px}.actions{display:flex;gap:8px}.actions>*{flex:1}.tableline{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:13px}.hint{font-size:11px;line-height:1.5;color:var(--muted)}.status{font-size:11px;padding:5px 8px;border-radius:99px;background:#e8eee9;color:var(--green);font-weight:700}
+@media(min-width:600px){.top{border-radius:0 0 28px 28px}.wrap{padding:22px}.sheet{border-radius:24px;margin-bottom:20px}.modal{align-items:center;padding:18px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top">
+ <div class="topline"><div class="brand">K A S A</div><span class="status" id="monthBadge">BU AY</span></div>
+ <div class="title">Paranın kontrolü sende.</div><div class="sub" id="dateLabel"></div>
+ <div class="hero"><small>Yatırım portföyü (kayıtlı son fiyatlarla)</small><div class="big" id="heroValue">₺0,00</div></div>
+</header>
+<main class="wrap">
+<section id="dashboard" class="page active">
+ <div class="grid">
+  <div class="card"><div class="metriclabel">Bu ay gelir</div><div class="metric green" id="incomeMetric">₺0</div></div>
+  <div class="card"><div class="metriclabel">Bu ay gider</div><div class="metric red" id="expenseMetric">₺0</div></div>
+  <div class="card"><div class="metriclabel">Bu ay kalan</div><div class="metric" id="netMetric">₺0</div></div>
+  <div class="card"><div class="metriclabel">Yatırım kâr/zararı</div><div class="metric" id="plMetric">₺0</div></div>
+ </div>
+ <div class="section"><h2>Hızlı işlem</h2></div>
+ <div class="quick">
+  <button onclick="openTx('income')"><b>＋</b>Gelir ekle</button>
+  <button onclick="openTx('expense')"><b>−</b>Gider ekle</button>
+  <button onclick="openHolding()"><b>◈</b>Yatırım ekle</button>
+ </div>
+ <div class="section"><h2>Son hareketler</h2><button class="btn secondary" onclick="showPage('transactions')">Tümü</button></div>
+ <div class="card" id="recentList"></div>
+ <div class="section"><h2>Bütçe durumu</h2><button class="btn secondary" onclick="showPage('budgets')">Düzenle</button></div>
+ <div id="budgetPreview" class="card"></div>
+ <p class="hint">Bu uygulama kişisel kayıtlarını cihazında tutar. Verilerini düzenli olarak Yedekleme bölümünden dışa aktar.</p>
+</section>
+
+<section id="transactions" class="page">
+ <div class="section"><h2>Gelir ve giderler</h2><button class="btn" onclick="openTx()">＋ Ekle</button></div>
+ <div class="pillrow" id="txFilters" style="margin-bottom:12px"><button class="pill active" data-filter="all">Tümü</button><button class="pill" data-filter="income">Gelir</button><button class="pill" data-filter="expense">Gider</button><button class="pill" data-filter="transfer">Transfer</button></div>
+ <div class="card" id="txList"></div>
+</section>
+
+<section id="budgets" class="page">
+ <div class="section"><h2>Bütçe hedefleri</h2><button class="btn" onclick="openBudget()">＋ Hedef</button></div>
+ <div class="notice">Haftalık, aylık veya kendi belirlediğin tarih aralığı için limit koy. Kategori adları, tutarlar ve tarihler sonradan değiştirilebilir.</div>
+ <div id="budgetList" style="margin-top:12px"></div>
+</section>
+
+<section id="portfolio" class="page">
+ <div class="grid">
+  <div class="card"><div class="metriclabel">Toplam portföy</div><div class="metric" id="portValue">₺0</div></div>
+  <div class="card"><div class="metriclabel">Açık kâr/zarar</div><div class="metric" id="portPL">₺0</div></div>
+ </div>
+ <div class="section"><h2>Altın ve hisseler</h2><button class="btn" onclick="openHolding()">＋ Yatırım</button></div>
+ <div class="card" id="holdingsList"></div>
+ <div class="section"><h2>Fiyat güncelleme</h2></div>
+ <div class="card">
+  <div class="notice">Altın ve BIST fiyatı sağlayıcıya göre değişebilir. API anahtarlarını yalnızca kişisel cihazında kullan; bu uygulama herkese açık bir siteye konursa anahtarların başkaları tarafından görülebilir.</div>
+  <div class="field" style="margin-top:12px"><label>Gram altın API anahtarı (isteğe bağlı)</label><input id="goldKey" type="password" placeholder="API anahtarını gir"></div>
+  <div class="field"><label>BIST fiyat API anahtarı (isteğe bağlı)</label><input id="stockKey" type="password" placeholder="Bearer token"></div>
+  <div class="actions"><button class="btn secondary" onclick="saveApiKeys()">Anahtarları kaydet</button><button class="btn" onclick="refreshPrices()">Fiyatları yenile</button></div>
+  <div id="priceStatus" class="hint" style="margin-top:10px">Fiyatlar henüz yenilenmedi. İstersen güncel fiyatları yatırım kartından elle de değiştirebilirsin.</div>
+  <p class="hint">Altın API: Hesaplı Altın (API anahtarı gerekir). Hisse API: istfin (abonelik/anahtar gerekir). Bağlantı, sağlayıcının erişim ve CORS izinlerine bağlıdır; uygulama fiyat verisini garanti etmez.</p>
+ </div>
+</section>
+
+<section id="reports" class="page">
+ <div class="section"><h2>Aylık rapor</h2><input id="reportMonth" type="month" style="border:1px solid var(--line);padding:9px;border-radius:10px;background:white" onchange="renderReports()"></div>
+ <div class="grid">
+  <div class="card"><div class="metriclabel">Toplam gelir</div><div class="metric green" id="reportIncome">₺0</div></div>
+  <div class="card"><div class="metriclabel">Toplam gider</div><div class="metric red" id="reportExpense">₺0</div></div>
+ </div>
+ <div class="card" style="margin-top:10px" id="categoryReport"></div>
+ <div class="section"><h2>Veri yedekleme</h2></div>
+ <div class="card">
+  <p class="muted small">Tüm hareketleri, bütçeleri, yatırımları ve ayarları JSON dosyası olarak indir veya yedeği geri yükle.</p>
+  <div class="actions"><button class="btn" onclick="exportBackup()">Yedek indir</button><button class="btn secondary" onclick="document.getElementById('importFile').click()">Yedekten yükle</button></div>
+  <input type="file" id="importFile" accept=".json,application/json" hidden onchange="importBackup(event)">
+  <p class="hint">Yedek dosyası hassas finansal bilgi içerir. Başkalarıyla paylaşma. Veriler varsayılan olarak yalnızca bu tarayıcıda saklanır.</p>
+  <button class="btn danger full" onclick="clearAll()" style="margin-top:8px">Tüm verileri sil</button>
+ </div>
+</section>
+</main>
+<nav class="tabs">
+ <button class="tab active" data-page="dashboard" onclick="showPage('dashboard')"><span>⌂</span>Özet</button>
+ <button class="tab" data-page="transactions" onclick="showPage('transactions')"><span>⇄</span>Hareketler</button>
+ <button class="tab" data-page="budgets" onclick="showPage('budgets')"><span>◎</span>Bütçe</button>
+ <button class="tab" data-page="portfolio" onclick="showPage('portfolio')"><span>◈</span>Yatırımlar</button>
+ <button class="tab" data-page="reports" onclick="showPage('reports')"><span>▤</span>Rapor</button>
+</nav>
+</div>
+
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()"><div class="sheet"><div class="sheethead"><h2 id="modalTitle">Yeni kayıt</h2><button class="close" onclick="closeModal()">×</button></div><div id="modalBody"></div></div></div>
+<script>
+const STORE='kasa.pwa.v1';
+let db={transactions:[],budgets:[],holdings:[],settings:{goldKey:'',stockKey:''}};
+let txFilter='all';
+const $=id=>document.getElementById(id);
+const money=n=>new Intl.NumberFormat('tr-TR',{style:'currency',currency:'TRY',maximumFractionDigits:2}).format(Number(n)||0);
+const dateISO=d=>new Date(d).toISOString().slice(0,10);
+const today=()=>dateISO(new Date());
+const uid=()=>Math.random().toString(36).slice(2,10)+Date.now().toString(36);
+const safe=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmtDate=d=>new Date(d+'T12:00:00').toLocaleDateString('tr-TR',{day:'numeric',month:'short',year:'numeric'});
+const num=id=>Number(String($(id).value).replace(',','.'));
+function load(){try{const x=JSON.parse(localStorage.getItem(STORE));if(x)db={...db,...x,settings:{...db.settings,...(x.settings||{})}}}catch(e){}}
+function save(){localStorage.setItem(STORE,JSON.stringify(db));renderAll()}
+function showPage(p){document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id===p));document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.page===p));if(p==='reports')renderReports();window.scrollTo({top:0,behavior:'smooth'})}
+function openModal(title,body){$('modalTitle').textContent=title;$('modalBody').innerHTML=body;$('modal').classList.add('open')}
+function closeModal(){$('modal').classList.remove('open')}
+function openTx(kind='expense',item=null){
+ const k=item?.kind||kind;
+ openModal(item?'Hareketi düzenle':'Hareket ekle',`
+ <div class="field"><label>İşlem türü</label><select id="fKind"><option value="income" ${k==='income'?'selected':''}>Gelir</option><option value="expense" ${k==='expense'?'selected':''}>Gider</option><option value="transfer" ${k==='transfer'?'selected':''}>Transfer (gider sayılmaz)</option></select></div>
+ <div class="field"><label>Açıklama</label><input id="fTitle" placeholder="Örn. Nöbet ücreti / Market" value="${safe(item?.title||'')}"></div>
+ <div class="formgrid"><div class="field"><label>Tutar (TL)</label><input id="fAmount" type="number" inputmode="decimal" min="0.01" step="0.01" value="${item?.amount??''}" placeholder="0,00"></div><div class="field"><label>Tarih</label><input id="fDate" type="date" value="${item?.date||today()}"></div></div>
+ <div class="field"><label>Kategori</label><input id="fCategory" list="categoryOptions" placeholder="Maaş, nöbet, market..." value="${safe(item?.category|| (k==='income'?'Maaş':k==='expense'?'Diğer':'Hesaplar arası'))}"><datalist id="categoryOptions"><option>Maaş</option><option>Temel maaş</option><option>Nöbet</option><option>Teşvik / performans</option><option>Ek görev</option><option>Kira</option><option>Faturalar</option><option>Market</option><option>Yemek</option><option>Ulaşım</option><option>Sağlık</option><option>Sosyal hayat</option><option>Alışveriş</option><option>Yatırım transferi</option><option>Diğer</option></datalist></div>
+ <div class="field"><label>Not (isteğe bağlı)</label><input id="fNote" value="${safe(item?.note||'')}" placeholder="İsteğe bağlı"></div>
+ <button class="btn full" onclick="saveTx('${item?.id||''}')">Kaydet</button>
+ ${item?`<button class="btn danger full" style="margin-top:8px" onclick="deleteTx('${item.id}')">Kaydı sil</button>`:''}
+ <p class="hint">Maaşın her bileşenini ayrı gelir kaydı olarak girebilirsin. Transferler aylık gelir ve gider toplamına katılmaz.</p>`);
+}
+function saveTx(id=''){
+ const amount=num('fAmount');if(!Number.isFinite(amount)||amount<=0){alert('Lütfen sıfırdan büyük bir tutar gir.');return}
+ const item={id:id||uid(),kind:$('fKind').value,title:$('fTitle').value.trim()||$('fCategory').value.trim()||'İşlem',amount,date:$('fDate').value||today(),category:$('fCategory').value.trim()||'Diğer',note:$('fNote').value.trim()};
+ if(id)db.transactions=db.transactions.map(x=>x.id===id?item:x);else db.transactions.unshift(item);closeModal();save();
+}
+function deleteTx(id){if(confirm('Bu kaydı silmek istiyor musun?')){db.transactions=db.transactions.filter(x=>x.id!==id);closeModal();save()}}
+function openBudget(item=null){
+ openModal(item?'Bütçeyi düzenle':'Bütçe hedefi',`
+ <div class="field"><label>Kategori</label><input id="bCategory" list="budgetCats" value="${safe(item?.category||'Market')}" placeholder="Market, yemek, özel kategori"><datalist id="budgetCats"><option>Market</option><option>Yemek</option><option>Ulaşım</option><option>Kira</option><option>Faturalar</option><option>Sosyal hayat</option><option>Alışveriş</option><option>Diğer</option></datalist></div>
+ <div class="field"><label>Hedef tutar (TL)</label><input id="bAmount" type="number" inputmode="decimal" min="0.01" step="0.01" value="${item?.amount??''}" placeholder="Örn. 10000"></div>
+ <div class="field"><label>Dönem</label><select id="bPeriod"><option ${item?.period==='Haftalık'?'selected':''}>Haftalık</option><option ${!item||item?.period==='Aylık'?'selected':''}>Aylık</option><option ${item?.period==='Özel dönem'?'selected':''}>Özel dönem</option></select></div>
+ <div class="formgrid"><div class="field"><label>Başlangıç</label><input id="bStart" type="date" value="${item?.start||monthStart()}"></div><div class="field"><label>Bitiş</label><input id="bEnd" type="date" value="${item?.end||monthEnd()}"></div></div>
+ <button class="btn full" onclick="saveBudget('${item?.id||''}')">Kaydet</button>
+ ${item?`<button class="btn danger full" style="margin-top:8px" onclick="deleteBudget('${item.id}')">Hedefi sil</button>`:''}`);
+}
+function monthStart(){let d=new Date();return dateISO(new Date(d.getFullYear(),d.getMonth(),1))}
+function monthEnd(){let d=new Date();return dateISO(new Date(d.getFullYear(),d.getMonth()+1,0))}
+function saveBudget(id=''){let amount=num('bAmount'),start=$('bStart').value,end=$('bEnd').value;if(!amount||amount<=0||!start||!end||end<start){alert('Tutarı ve geçerli tarih aralığını kontrol et.');return}
+ let b={id:id||uid(),category:$('bCategory').value.trim()||'Diğer',amount,period:$('bPeriod').value,start,end};if(id)db.budgets=db.budgets.map(x=>x.id===id?b:x);else db.budgets.unshift(b);closeModal();save()}
+function deleteBudget(id){if(confirm('Bütçe hedefini silmek istiyor musun?')){db.budgets=db.budgets.filter(x=>x.id!==id);closeModal();save()}}
+function openHolding(item=null){
+ openModal(item?'Yatırımı düzenle':'Yatırım ekle',`
+ <div class="field"><label>Varlık türü</label><select id="hType"><option ${item?.type==='Altın'?'selected':''}>Altın</option><option ${!item||item?.type==='Hisse'?'selected':''}>Hisse</option></select></div>
+ <div class="field"><label>Ad / şirket</label><input id="hName" value="${safe(item?.name||'')}" placeholder="Gram altın veya şirket adı"></div>
+ <div class="field"><label>Kod / altın türü</label><input id="hSymbol" value="${safe(item?.symbol||'')}" placeholder="GRAM_ALTIN_TRY veya THYAO"></div>
+ <div class="formgrid"><div class="field"><label>Miktar / adet</label><input id="hQty" type="number" inputmode="decimal" step="0.0001" min="0.0001" value="${item?.qty??''}"></div><div class="field"><label>Birim alış (TL)</label><input id="hBuy" type="number" inputmode="decimal" step="0.01" min="0" value="${item?.buy??''}"></div></div>
+ <div class="formgrid"><div class="field"><label>Güncel birim fiyat (TL)</label><input id="hCurrent" type="number" inputmode="decimal" step="0.01" min="0" value="${item?.current??''}"></div><div class="field"><label>Alış tarihi</label><input id="hDate" type="date" value="${item?.date||today()}"></div></div>
+ <div class="field"><label>Alış yapılan banka / aracı kurum / kuyumcu</label><input id="hPlace" value="${safe(item?.place||'')}" placeholder="Kurum veya kuyumcu"></div>
+ <button class="btn full" onclick="saveHolding('${item?.id||''}')">Kaydet</button>
+ ${item?`<button class="btn danger full" style="margin-top:8px" onclick="deleteHolding('${item.id}')">Yatırımı sil</button>`:''}
+ <p class="hint">Aynı varlığı farklı tarihlerde aldıysan her alış için ayrı kayıt aç. Portföy maliyeti ve açık kâr/zarar bu kayıtlar üzerinden hesaplanır. Satış ve gerçekleşmiş kâr/zarar kaydı bu ilk sürümde henüz yoktur.</p>`);
+}
+function saveHolding(id=''){let qty=num('hQty'),buy=num('hBuy'),current=num('hCurrent');if(!(qty>0)||!(buy>=0)||!(current>=0)){alert('Miktar ve fiyatları kontrol et.');return}
+ let h={id:id||uid(),type:$('hType').value,name:$('hName').value.trim()||$('hSymbol').value.trim(),symbol:$('hSymbol').value.trim(),qty,buy,current,date:$('hDate').value||today(),place:$('hPlace').value.trim()||'Belirtilmedi',updatedAt:new Date().toISOString()};
+ if(id)db.holdings=db.holdings.map(x=>x.id===id?h:x);else db.holdings.unshift(h);closeModal();save()}
+function deleteHolding(id){if(confirm('Yatırım kaydını silmek istiyor musun?')){db.holdings=db.holdings.filter(x=>x.id!==id);closeModal();save()}}
+function hCost(h){return h.qty*h.buy}function hValue(h){return h.qty*h.current}function hPL(h){return hValue(h)-hCost(h)}
+function txHtml(t){let sym=t.kind==='income'?'↙':t.kind==='expense'?'↗':'⇄',cls=t.kind==='income'?'green':t.kind==='expense'?'red':'';return `<div class="item"><div class="icon">${sym}</div><div class="itemmain" onclick="openTx('${t.kind}',db.transactions.find(x=>x.id==='${t.id}'))"><div class="itemtitle">${safe(t.title)}</div><div class="itemsublabel">${safe(t.category)} · ${fmtDate(t.date)}</div>${t.note?`<div class="itemsublabel">${safe(t.note)}</div>`:''}</div><div><div class="itemamount ${cls}">${t.kind==='income'?'+':t.kind==='expense'?'−':''}${money(t.amount)}</div><button class="pill" style="padding:4px 7px;margin-top:5px" onclick="openTx('${t.kind}',db.transactions.find(x=>x.id==='${t.id}'))">Düzenle</button></div></div>`}
+function monthKey(d){return (d||'').slice(0,7)}
+function thisMonthTx(){let m=monthKey(today());return db.transactions.filter(t=>monthKey(t.date)===m)}
+function budgetSpent(b){return db.transactions.filter(t=>t.kind==='expense'&&t.category.toLocaleLowerCase('tr-TR')===b.category.toLocaleLowerCase('tr-TR')&&t.date>=b.start&&t.date<=b.end).reduce((a,t)=>a+t.amount,0)}
+function renderAll(){
+ let mts=thisMonthTx(),inc=mts.filter(t=>t.kind==='income').reduce((a,t)=>a+t.amount,0),exp=mts.filter(t=>t.kind==='expense').reduce((a,t)=>a+t.amount,0),value=db.holdings.reduce((a,h)=>a+hValue(h),0),pl=db.holdings.reduce((a,h)=>a+hPL(h),0);
+ $('incomeMetric').textContent=money(inc);$('expenseMetric').textContent=money(exp);$('netMetric').textContent=money(inc-exp);$('plMetric').textContent=money(pl);$('plMetric').className='metric '+(pl>=0?'green':'red');$('heroValue').textContent=money(value);$('portValue').textContent=money(value);$('portPL').textContent=money(pl);$('portPL').className='metric '+(pl>=0?'green':'red');
+ let recent=db.transactions.slice().sort((a,b)=>b.date.localeCompare(a.date)).slice(0,5);$('recentList').innerHTML=recent.length?recent.map(txHtml).join(''):'<div class="empty">Henüz kayıt yok. İlk maaş kalemini veya günlük harcamanı ekle.</div>';
+ renderTx();renderBudgets();renderHoldings();renderBudgetPreview();renderReports();
+}
+function renderTx(){let xs=db.transactions.slice().sort((a,b)=>b.date.localeCompare(a.date));if(txFilter!=='all')xs=xs.filter(t=>t.kind===txFilter);$('txList').innerHTML=xs.length?xs.map(txHtml).join(''):'<div class="empty">Bu filtrede kayıt bulunmuyor.</div>'}
+function renderBudgets(){$('budgetList').innerHTML=db.budgets.length?db.budgets.map(b=>{let s=budgetSpent(b),pct=Math.min(s/Math.max(b.amount,1),1);return `<div class="card" style="margin-bottom:10px"><div class="topline" style="color:var(--text)"><b>${safe(b.category)}</b><span class="status">${safe(b.period)}</span></div><div class="tableline"><span>${money(s)} harcandı</span><b>${money(b.amount)}</b></div><div class="progress ${s>b.amount?'over':''}"><div style="width:${pct*100}%"></div></div><div class="topline" style="margin-top:9px;color:var(--muted);font-size:11px"><span>${fmtDate(b.start)} – ${fmtDate(b.end)}</span><span>${Math.round(s/Math.max(b.amount,1)*100)}%</span></div><button class="pill" style="margin-top:10px" onclick="openBudget(db.budgets.find(x=>x.id==='${b.id}'))">Düzenle</button></div>`}).join(''):'<div class="card empty">Henüz bütçe hedefi eklenmedi.</div>'}
+function renderBudgetPreview(){let active=db.budgets.filter(b=>b.start<=today()&&b.end>=today()).slice(0,3);$('budgetPreview').innerHTML=active.length?active.map(b=>{let s=budgetSpent(b),pct=Math.min(s/Math.max(b.amount,1),1);return `<div style="margin:7px 0 14px"><div class="topline" style="color:var(--text);font-size:13px"><span>${safe(b.category)}</span><b>${money(s)} / ${money(b.amount)}</b></div><div class="progress ${s>b.amount?'over':''}"><div style="width:${pct*100}%"></div></div></div>`}).join(''):'<div class="empty">Aktif hedef yok. Bütçe sekmesinden hedef ekleyebilirsin.</div>'}
+function renderHoldings(){$('holdingsList').innerHTML=db.holdings.length?db.holdings.map(h=>`<div class="item"><div class="icon">${h.type==='Altın'?'🟡':'📈'}</div><div class="itemmain" onclick="openHolding(db.holdings.find(x=>x.id==='${h.id}'))"><div class="itemtitle">${safe(h.name)} <span class="muted small">${safe(h.symbol)}</span></div><div class="itemsublabel">${safe(h.type)} · ${h.qty} adet/gram · ${safe(h.place)}</div><div class="itemsublabel">Maliyet ${money(hCost(h))} · Güncel birim ${money(h.current)}</div></div><div><div class="itemamount">${money(hValue(h))}</div><div class="itemamount ${hPL(h)>=0?'green':'red'}" style="margin-top:4px">${hPL(h)>=0?'+':''}${money(hPL(h))}</div><button class="pill" style="margin-top:5px;padding:4px 7px" onclick="openHolding(db.holdings.find(x=>x.id==='${h.id}'))">Düzenle</button></div></div>`).join(''):'<div class="empty">Portföyün boş. İlk altın veya hisse alışını ekle.</div>'}
+function renderReports(){if(!$('reportMonth').value)$('reportMonth').value=monthKey(today());let m=$('reportMonth').value,ts=db.transactions.filter(t=>monthKey(t.date)===m),inc=ts.filter(t=>t.kind==='income').reduce((a,t)=>a+t.amount,0),exp=ts.filter(t=>t.kind==='expense').reduce((a,t)=>a+t.amount,0);$('reportIncome').textContent=money(inc);$('reportExpense').textContent=money(exp);let cats={};ts.filter(t=>t.kind==='expense').forEach(t=>cats[t.category]=(cats[t.category]||0)+t.amount);let sorted=Object.entries(cats).sort((a,b)=>b[1]-a[1]);$('categoryReport').innerHTML=`<div class="tableline"><b>Net nakit akışı</b><b class="${inc-exp>=0?'green':'red'}">${money(inc-exp)}</b></div><div class="section"><h2>Gider dağılımı</h2></div>`+(sorted.length?sorted.map(([c,v])=>`<div class="tableline"><span>${safe(c)}</span><b>${money(v)}</b></div>`).join(''):'<div class="empty">Bu ay gider kaydı yok.</div>')}
+function saveApiKeys(){db.settings.goldKey=$('goldKey').value.trim();db.settings.stockKey=$('stockKey').value.trim();save();$('priceStatus').textContent='API anahtarları bu tarayıcıda saklandı. Bu kişisel uygulama bağlantısı içindir; herkese açık paylaşma.'}
+async function refreshPrices(){
+ const status=$('priceStatus');let updated=0,errors=[];
+ const goldKey=$('goldKey').value.trim()||db.settings.goldKey;
+ const stockKey=$('stockKey').value.trim()||db.settings.stockKey;
+ if(!goldKey&&!stockKey){status.textContent='Önce altın veya BIST sağlayıcı API anahtarı gir. İstersen fiyatları yatırım kartından elle de güncelleyebilirsin.';return}
+ status.textContent='Fiyatlar sorgulanıyor…';
+ if(goldKey){
+  try{
+   const r=await fetch('https://hesaplialtin.com/api/v1/public-prices',{headers:{'X-API-Key':goldKey}});
+   if(!r.ok)throw new Error('Altın API HTTP '+r.status);
+   const j=await r.json(),g=j.kalemler?.GRAM_ALTIN_TRY;
+   if(!g||!(Number(g.satis)>0))throw new Error('Gram altın alanı bulunamadı');
+   db.holdings.forEach(h=>{if(h.type==='Altın'&&/gram|gram_altin|gram-altın/i.test(h.symbol+' '+h.name)){h.current=Number(g.satis);h.updatedAt=g.guncelleme||j.updatedAt||new Date().toISOString();updated++}});
+  }catch(e){errors.push('Altın: '+e.message+' (CORS veya anahtar izni olabilir)')}
+ }
+ if(stockKey){
+  try{
+   const symbols=[...new Set(db.holdings.filter(h=>h.type==='Hisse'&&h.symbol).map(h=>h.symbol.toUpperCase()))];
+   if(symbols.length){
+    const r=await fetch('https://api.istfin.com/v1/quotes?symbols='+encodeURIComponent(symbols.join(',')),{headers:{'Authorization':'Bearer '+stockKey}});
+    if(!r.ok)throw new Error('BIST API HTTP '+r.status);
+    const j=await r.json(),quotes=j.data||[];
+    db.holdings.forEach(h=>{if(h.type==='Hisse'){const q=quotes.find(q=>q.symbol.toUpperCase()===h.symbol.toUpperCase());if(q&&Number(q.price)>0){h.current=Number(q.price);h.updatedAt=q.asOf||new Date().toISOString();updated++}}});
+    if(!quotes.length)errors.push('BIST: semboller için fiyat dönmedi');
+   }
+  }catch(e){errors.push('BIST: '+e.message+' (CORS, abonelik veya anahtar izni olabilir)')}
+ }
+ save();status.textContent=(updated?updated+' yatırım fiyatı güncellendi. ':'Fiyat güncellemesi yapılamadı. ')+(errors.join(' | ')||'Son fiyat zamanı yatırım kayıtlarında gösterilir.');
+}
+function exportBackup(){let blob=new Blob([JSON.stringify({...db,exportedAt:new Date().toISOString(),formatVersion:1},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='Kasa-Yedek-'+today()+'.json';a.click();URL.revokeObjectURL(url)}
+function importBackup(e){let f=e.target.files?.[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let x=JSON.parse(r.result);if(!Array.isArray(x.transactions)||!Array.isArray(x.budgets)||!Array.isArray(x.holdings))throw new Error();if(!confirm('Mevcut verilerin yerine yedek dosyasındaki veriler yüklensin mi?'))return;db={transactions:x.transactions,budgets:x.budgets,holdings:x.holdings,settings:{...db.settings,...(x.settings||{})}};save();alert('Yedek geri yüklendi.')}catch(err){alert('Bu dosya geçerli bir Kasa yedeği değil.')}e.target.value=''};r.readAsText(f)}
+function clearAll(){if(confirm('TÜM kayıtlar silinecek. Önce yedek almak ister misin?')&&confirm('Emin misin? Bu işlem geri alınamaz.')){db={transactions:[],budgets:[],holdings:[],settings:{goldKey:'',stockKey:''}};save()}}
+document.querySelectorAll('#txFilters button').forEach(b=>b.addEventListener('click',()=>{txFilter=b.dataset.filter;document.querySelectorAll('#txFilters button').forEach(x=>x.classList.toggle('active',x===b));renderTx()}));
+function init(){load();$('dateLabel').textContent=new Date().toLocaleDateString('tr-TR',{weekday:'long',day:'numeric',month:'long',year:'numeric'});$('monthBadge').textContent=new Date().toLocaleDateString('tr-TR',{month:'long'}).toLocaleUpperCase('tr-TR');$('goldKey').value=db.settings.goldKey||'';$('stockKey').value=db.settings.stockKey||'';renderAll()}
+init();
+if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
+</script>
+</body>
+</html>

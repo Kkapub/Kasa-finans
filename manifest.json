@@ -1,0 +1,10 @@
+{
+  "name": "Kasa — Kişisel Finans",
+  "short_name": "Kasa",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f3f5f2",
+  "theme_color": "#153d2e",
+  "description": "Gelir, gider, bütçe ve yatırım takip uygulaması",
+  "icons": []
+}
